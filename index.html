@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e9e9e6" />
+    <meta
+      name="description"
+      content="Practical digital safety lessons, fictional scam simulations, and official Indian cybercrime reporting resources."
+    />
+    <title>CyberShield — Digital Safety</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/editorial.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="CyberShield home" data-brand-home>
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 36" fill="none">
+            <path d="M16 2 29 7v9c0 8-5.3 14.2-13 18C8.3 30.2 3 24 3 16V7l13-5Z" stroke="currentColor" stroke-width="2.2" />
+            <path d="m10.5 17 3.7 3.7 7.7-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span>CYBER<span class="brand-light">SHIELD</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#learn" data-i18n="navLearn">Learn</a>
+        <a href="#lab" data-i18n="navLab">Scam Lab</a>
+        <a href="#guide" data-i18n="navGuide">Safety guide</a>
+        <a href="#community" data-i18n="navCommunity">Community</a>
+        <details class="nav-dropdown">
+          <summary data-nav-target="#report" data-i18n="navReport">Report</summary>
+          <div class="nav-dropdown-menu">
+            <a href="#report" data-i18n="navReportResources">Reporting resources</a>
+            <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer" data-i18n="navOfficialPortal">Official reporting portal</a>
+            <a href="tel:1930" data-i18n="navHelpline">Call financial fraud helpline 1930</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="sound-toggle" type="button" aria-pressed="false" data-i18n="soundOff" data-i18n-aria="soundEnable">Sound off</button>
+        <label class="sr-only" for="language-select" data-i18n="languageLabel">Choose language</label>
+        <select id="language-select" class="language-select" aria-label="Choose language">
+          <option value="en">EN</option>
+          <option value="kn">ಕನ್ನಡ</option>
+        </select>
+        <a class="header-cta" href="#lab"><span data-i18n="navTryLab">Try Scam Lab</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+    <p class="sr-only" id="sound-status" aria-live="polite"></p>
+
+    <main id="main-content">
+      <section class="hero section-shell" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span><span data-i18n="heroEyebrow">CYBERSHIELD / DIGITAL SAFETY</span></p>
+          <h1 id="hero-title"><span data-i18n="heroTitle">Know the move.</span><br /><span data-i18n="heroMiddle">Break the</span> <span class="gradient-text" data-i18n="heroAccent">pattern.</span></h1>
+          <p class="hero-description" data-i18n="heroDescription">Recognise digital threats before they reach you. Learn the signals, practise safer decisions and protect what matters.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#learn"><span data-i18n="heroPrimary">Explore Cyber Safety</span><span aria-hidden="true">↗</span></a>
+            <a class="button hero-secondary-button" href="#lab"><span data-i18n="heroSecondary">Enter Scam Lab</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-note"><span class="note-rule" aria-hidden="true"></span><span data-i18n="heroNote">STOP · CHECK · PROTECT</span></div>
+        </div>
+        <div class="hero-visual">
+          <img
+            class="hero-scene-backdrop"
+            src="/assets/cybershield/fiber-optic-threat-network.jpg"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="visual-grid" aria-hidden="true"></div>
+          <div class="visual-orbit orbit-one" aria-hidden="true"></div>
+          <div class="visual-orbit orbit-two" aria-hidden="true"></div>
+          <div class="visual-glow" aria-hidden="true"></div>
+          <div class="scene-coordinate coordinate-top"><span>CS / 01</span><span data-i18n="sceneSystem">PROTECTION SYSTEM</span></div>
+          <div id="shield-scene" class="shield-scene" aria-hidden="true"></div>
+          <button class="shield-interaction" type="button" aria-describedby="shield-interaction-status" data-i18n-aria="shieldInteract">
+            <span class="sr-only" data-i18n="shieldInteract">Activate the shield visual</span>
+          </button>
+          <span class="sr-only" id="shield-interaction-status" aria-live="polite"></span>
+          <div class="shield-fallback" aria-hidden="true">
+            <svg viewBox="0 0 280 320" role="presentation">
+              <defs>
+                <linearGradient id="shield-gradient" x1="35" y1="20" x2="245" y2="290" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#a0f6ff" stop-opacity=".9" />
+                  <stop offset=".48" stop-color="#188cff" stop-opacity=".45" />
+                  <stop offset="1" stop-color="#111a46" stop-opacity=".78" />
+                </linearGradient>
+              </defs>
+              <path d="M140 17 251 59v78c0 75-45 130-111 166C74 267 29 212 29 137V59L140 17Z" fill="url(#shield-gradient)" stroke="#85eaff" stroke-width="3" />
+              <path d="m91 155 33 33 67-76" fill="none" stroke="#e0fdff" stroke-linecap="round" stroke-linejoin="round" stroke-width="13" />
+            </svg>
+          </div>
+          <div class="scene-readout readout-left"><span class="readout-line"></span><span data-i18n="sceneSignal">THREAT SIGNAL</span><strong data-i18n="sceneIntercepted">INTERCEPTED</strong></div>
+          <div class="scene-readout readout-right"><span class="caption-pulse"></span><span data-i18n="visualCaption">YOUR AWARENESS IS THE FIRST DEFENCE</span></div>
+          <div class="scene-coordinate coordinate-bottom"><span data-i18n="sceneMotto">STOP / CHECK / PROTECT</span><span data-i18n="sceneStatus">SYSTEM ACTIVE</span></div>
+          <div class="hero-hotspots" data-i18n-aria="hotspotsLabel" aria-label="Shield safety details">
+            <details class="hero-hotspot hotspot-one">
+              <summary aria-label="Threat signal information" data-i18n="hotspotSignalLabel" data-i18n-aria="hotspotSignalAria">01</summary>
+              <p data-i18n="hotspotSignalText">Urgency is a signal to pause and verify independently.</p>
+            </details>
+            <details class="hero-hotspot hotspot-two">
+              <summary aria-label="Protective action information" data-i18n="hotspotProtectLabel" data-i18n-aria="hotspotProtectAria">02</summary>
+              <p data-i18n="hotspotProtectText">Use a trusted official channel—not details in an unexpected message.</p>
+            </details>
+          </div>
+        </div>
+        <div class="hero-panels" data-i18n-aria="heroPanelsLabel" aria-label="CyberShield learning and reporting resources">
+          <a class="hero-panel" href="#learn">
+            <span class="hero-panel-icon" aria-hidden="true">01</span>
+            <span><span class="hero-panel-label" data-i18n="heroLearnLabel">LEARN</span><strong data-i18n="heroLearnText">Explore eight common digital scams</strong></span>
+            <span class="hero-panel-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="hero-panel" href="#lab">
+            <span class="hero-panel-icon" aria-hidden="true">02</span>
+            <span><span class="hero-panel-label" data-i18n="heroPractiseLabel">PRACTISE</span><strong data-i18n="heroPractiseText">Test your decisions in Scam Lab</strong></span>
+            <span class="hero-panel-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="hero-panel" href="#guide">
+            <span class="hero-panel-icon" aria-hidden="true">03</span>
+            <span><span class="hero-panel-label" data-i18n="heroProtectLabel">PROTECT</span><strong data-i18n="heroProtectText">Follow the four-step safety protocol</strong></span>
+            <span class="hero-panel-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="hero-panel" href="#report">
+            <span class="hero-panel-icon" aria-hidden="true">04</span>
+            <span><span class="hero-panel-label" data-i18n="heroReportLabel">REPORT</span><strong data-i18n="heroReportText">Find India's official reporting resources</strong></span>
+            <span class="hero-panel-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <a href="#learn" class="scroll-cue"><span data-i18n="scrollCue">01 — EXPLORE THE SIGNALS</span><span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="trust-strip" aria-label="CyberShield principles">
+        <div><span>01</span><p data-i18n="principleOne">Pause before you tap</p></div>
+        <div><span>02</span><p data-i18n="principleTwo">Verify through a trusted channel</p></div>
+        <div><span>03</span><p data-i18n="principleThree">Protect your codes and credentials</p></div>
+      </section>
+
+      <section class="morph-section" id="explore" aria-labelledby="morph-title">
+        <div class="morph-inner section-shell">
+          <div class="morph-heading">
+            <div>
+              <p class="eyebrow"><span class="section-index">01—B</span><span data-i18n="galleryEyebrow">EXPLORE THE SIGNALS</span></p>
+              <h2 id="morph-title" data-i18n="galleryTitle">Eight patterns.<br /><span>One safer next move.</span></h2>
+            </div>
+            <p data-i18n="galleryDescription">Follow the cards from a scattered signal to a clearer picture. Choose any topic to open its lesson.</p>
+          </div>
+          <p class="morph-status" id="morph-status" aria-live="polite" data-i18n="galleryScatter">SIGNALS / SCATTERED</p>
+          <div class="morph-stage" id="morph-stage" data-i18n-aria="galleryStageLabel" aria-label="Eight cybersecurity learning topics">
+            <a class="morph-card" href="#learn" data-morph-card>
+              <span class="morph-card-art" aria-hidden="true">↗</span><span class="morph-card-number">01</span>
+              <span class="morph-card-title">Phishing &amp; suspicious links</span><span class="morph-card-hint" data-i18n="galleryCardHint">Open lesson</span>
+            </a>
+            <a class="morph-card" href="#learn" data-morph-card>
+              <span class="morph-card-art" aria-hidden="true">▦</span><span class="morph-card-number">02</span>
+              <span class="morph-card-title">UPI &amp; QR requests</span><span class="morph-card-hint" data-i18n="galleryCardHint">Open lesson</span>
+            </a>
+            <a class="morph-card" href="#learn" data-morph-card>
+              <span class="morph-card-art" aria-hidden="true">◉</span><span class="morph-card-number">03</span>
+              <span class="morph-card-title">Fake customer care</span><span class="morph-card-hint" data-i18n="galleryCardHint">Open lesson</span>
+            </a>
+            <a class="morph-card" href="#learn" data-morph-card>
+              <span class="morph-card-art" aria-hidden="true">▣</span><span class="morph-card-number">04</span>
+              <span class="morph-card-title">Job &amp; scholarship scams</span><span class="morph-card-hint" data-i18n="galleryCardHint">Open lesson</span>
+            </a>
+            <a class="morph-card" href="#learn" data-morph-card>
+              <span class="morph-card-art" aria-hidden="true">⌑</span><span class="morph-card-number">05</span>
+              <span class="morph-card-title">OTP, PIN &amp; remote access</span><span class="morph-card-hint" data-i18n="galleryCardHint">Open lesson</span>
+            </a>
+            <a class="morph-card" href="#learn" data-morph-card>
+              <span class="morph-card-art" aria-hidden="true">♙</span><span class="morph-card-number">06</span>
+              <span class="morph-card-title">Impersonation</span><span class="morph-card-hint" data-i18n="galleryCardHint">Open lesson</span>
+            </a>
+            <a class="morph-card" href="#learn" data-morph-card>
+              <span class="morph-card-art" aria-hidden="true">⌁</span><span class="morph-card-number">07</span>
+              <span class="morph-card-title">Investment fraud</span><span class="morph-card-hint" data-i18n="galleryCardHint">Open lesson</span>
+            </a>
+            <a class="morph-card" href="#learn" data-morph-card>
+              <span class="morph-card-art" aria-hidden="true">〰</span><span class="morph-card-number">08</span>
+              <span class="morph-card-title">AI &amp; synthetic deception</span><span class="morph-card-hint" data-i18n="galleryCardHint">Open lesson</span>
+            </a>
+          </div>
+          <div class="morph-transition">
+            <span data-i18n="galleryTransition">Continue to the eight lessons</span>
+            <a href="#learn" data-i18n-aria="galleryContinueAria" aria-label="Continue to the cybersecurity lessons"><span data-i18n="galleryContinue">Explore lessons</span><span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="safety-marquee" aria-hidden="true">
+        <span class="sr-only" data-i18n="marqueeLabel">Stop. Check. Verify. Protect.</span>
+        <div class="marquee-track">
+          <span>STOP. CHECK. VERIFY. PROTECT. <i>✳</i> STOP. CHECK. VERIFY. PROTECT. <i>✳</i> STOP. CHECK. VERIFY. PROTECT. <i>✳</i></span>
+        </div>
+      </div>
+
+      <section class="content-section section-shell" id="learn" aria-labelledby="learn-title">
+        <div class="section-heading reveal">
+          <div>          <p class="eyebrow"><span class="section-index">01</span><span data-i18n="learnEyebrow">THREAT INTELLIGENCE / FIELD NOTES</span></p>
+          <h2 id="learn-title" data-i18n="learnTitle">Know the move.<br /><span class="muted-heading">Break the pattern.</span></h2></div>
+          <p class="section-intro" data-i18n="learnIntro">Scams use familiar tactics: urgency, authority, and unexpected requests. Learn the signal, then verify through a channel you trust.</p>
+        </div>
+        <div class="signal-brief reveal">
+          <div class="signal-orb" aria-hidden="true"><span></span><i></i></div>
+          <div class="signal-brief-copy"><span data-i18n="signalBriefLabel">THE PATTERN</span><p data-i18n="signalBriefText">A suspicious message wants you to act before you have time to think. Create that time: stop, check, protect.</p></div>
+          <span class="signal-brief-index" data-i18n="signalBriefTag">SIGNAL / RESPONSE</span>
+        </div>
+        <article class="threat-feature reveal" aria-labelledby="threat-feature-title">
+          <div class="threat-feature-copy">
+            <p class="eyebrow"><span class="section-index">01—A</span><span data-i18n="threatFeatureEyebrow">THE EVOLVING THREAT LANDSCAPE</span></p>
+            <h3 id="threat-feature-title" data-i18n="threatFeatureTitle">The threat landscape never stands still.</h3>
+            <p data-i18n="threatFeatureCopy">New channels, familiar pressure. Learn to spot the moment a message asks you to stop thinking and start obeying.</p>
+            <span class="threat-feature-index" data-i18n="threatFeatureIndex">FIELD NOTE / 08 SIGNALS</span>
+          </div>
+          <figure class="threat-feature-image">
+            <img
+              src="/images/cyber-architecture.jpg"
+              alt="Close-up of luminous circuit pathways on a dark electronic board"
+              data-i18n-alt="threatFeatureImageAlt"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="image-reticle reticle-top" aria-hidden="true"></span>
+            <span class="image-reticle reticle-bottom" aria-hidden="true"></span>
+            <figcaption data-i18n="threatFeatureCaption">SYSTEMS CONNECT. VERIFY THE SIGNAL.</figcaption>
+          </figure>
+        </article>
+        <section class="trend-topics" aria-labelledby="trend-topics-title">
+          <div class="trend-topics-heading">
+            <h3 id="trend-topics-title" data-i18n="trendTopicsHeading">Patterns to recognise</h3>
+            <p data-i18n="trendTopicsNote">Educational patterns, not incident reports or statistics.</p>
+          </div>
+          <div class="trend-grid" id="trend-grid">
+            <article class="trend-card">
+              <div class="trend-card-visual"><img class="trend-card-image" src="/assets/cybershield/digital-identity-fingerprint.jpg" alt="An illuminated fingerprint in a glass cube, a symbolic digital identity visual" loading="lazy" decoding="async" /><span class="trend-card-number">01</span></div>
+              <h4>AI-powered impersonation</h4>
+              <p>Cloned voices and synthetic profiles can make an unexpected request feel familiar.</p>
+              <p class="trend-action"><strong>PRACTICAL CHECK</strong>Call back using a number you already have, not one supplied with the request.</p>
+            </article>
+            <article class="trend-card">
+              <div class="trend-card-visual"><img class="trend-card-image" src="/assets/cybershield/qr-payment-concept.jpg" alt="A glowing QR-style payment display beside a phone, shown as a conceptual illustration" loading="lazy" decoding="async" /><span class="trend-card-number">02</span></div>
+              <h4>QR and payment manipulation</h4>
+              <p>A QR code or collect request can initiate a payment. Read the payment screen and confirm the recipient; a PIN authorises money leaving, not arriving.</p>
+              <p class="trend-action"><strong>PRACTICAL CHECK</strong>Check the recipient and amount in your payment app; never enter a PIN to receive money.</p>
+            </article>
+            <article class="trend-card">
+              <div class="trend-card-visual"><img class="trend-card-image" src="/assets/cybershield/fiber-optic-threat-network.jpg" alt="Abstract fiber-optic pathways representing connected digital communications" loading="lazy" decoding="async" /><span class="trend-card-number">03</span></div>
+              <h4>Social engineering</h4>
+              <p>Urgency, authority, fear or affection can pressure people to act before checking.</p>
+              <p class="trend-action"><strong>PRACTICAL CHECK</strong>Pause and verify the request through contact details you find independently.</p>
+            </article>
+            <article class="trend-card">
+              <div class="trend-card-visual"><img class="trend-card-image" src="/assets/cybershield/mobile-shield-interface.jpg" alt="A phone with a glowing shield symbol, illustrating mobile account protection" loading="lazy" decoding="async" /><span class="trend-card-number">04</span></div>
+              <h4>Fake digital support</h4>
+              <p>Fraudulent support listings may promise refunds or account fixes, then ask for codes, remote access or payment.</p>
+              <p class="trend-action"><strong>PRACTICAL CHECK</strong>Find help through the organisation's official app or website.</p>
+            </article>
+            <article class="trend-card">
+              <div class="trend-card-visual"><img class="trend-card-image" src="/images/digital-workspace.jpg" alt="A digital workspace with a laptop, illustrating online work and financial services" loading="lazy" decoding="async" /><span class="trend-card-number">05</span></div>
+              <h4>Investment and job fraud</h4>
+              <p>Fake vacancies can demand upfront fees; investment pitches may promise certainty or unusually high returns.</p>
+              <p class="trend-action"><strong>PRACTICAL CHECK</strong>Verify employers, firms and claims with official sources before paying or investing.</p>
+            </article>
+            <article class="trend-card">
+              <div class="trend-card-visual"><img class="trend-card-image" src="/assets/cybershield/synthetic-fingerprint.jpg" alt="An abstract synthetic fingerprint made from luminous strands" loading="lazy" decoding="async" /><span class="trend-card-number">06</span></div>
+              <h4>Deepfake and synthetic media</h4>
+              <p>Manipulated audio, photos and video can create a false sense of evidence. A convincing recording is not proof.</p>
+              <p class="trend-action"><strong>PRACTICAL CHECK</strong>Confirm unusual claims through a separate channel you already trust.</p>
+            </article>
+          </div>
+        </section>
+        <div class="lesson-grid" id="lesson-grid"></div>
+        <div class="lesson-fallback" aria-label="Eight cybersecurity learning topics">
+          <article class="lesson-fallback-card"><span>01 / PHISHING</span><h3>Phishing &amp; suspicious links</h3><p>Urgent account warnings and unfamiliar links deserve a second look. Open the official app or website yourself to check.</p></article>
+          <article class="lesson-fallback-card"><span>02 / UPI &amp; QR</span><h3>UPI &amp; QR requests</h3><p>A UPI PIN authorises a payment; it is not needed to receive money. Review unexpected requests in your payment app.</p></article>
+          <article class="lesson-fallback-card"><span>03 / SUPPORT</span><h3>Fake customer care</h3><p>Find support through an organisation's official app or verified website. Do not install tools at a caller's request.</p></article>
+          <article class="lesson-fallback-card"><span>04 / OPPORTUNITY</span><h3>Job &amp; scholarship scams</h3><p>Check offers independently, especially when they promise guaranteed selection or demand an upfront fee.</p></article>
+          <article class="lesson-fallback-card"><span>05 / ACCESS</span><h3>OTP, PIN &amp; remote access</h3><p>Keep verification codes and PINs private. Never grant unexpected screen access or disclose a code to a caller.</p></article>
+          <article class="lesson-fallback-card"><span>06 / IDENTITY</span><h3>Impersonation</h3><p>Verify urgent requests through a known, separate contact route before sharing information or sending money.</p></article>
+          <article class="lesson-fallback-card"><span>07 / INVESTMENT</span><h3>Investment fraud</h3><p>Guaranteed returns and pressure to transfer quickly are warning signs. Check claims with official sources.</p></article>
+          <article class="lesson-fallback-card"><span>08 / SYNTHETIC MEDIA</span><h3>AI &amp; synthetic deception</h3><p>A familiar-sounding voice is not proof of identity. Confirm unusual requests through a contact route you already trust.</p></article>
+        </div>
+        <p class="fiction-note"><span aria-hidden="true">ⓘ</span><span data-i18n="fictionNote">For awareness only. Scenarios are fictional and are not instructions to interact with suspicious messages.</span></p>
+      </section>
+
+      <section class="lab-section" id="lab" aria-labelledby="lab-title">
+        <div class="lab-backdrop" aria-hidden="true"></div>
+        <div class="section-shell lab-inner">
+          <div class="lab-intro reveal">
+            <p class="eyebrow"><span class="section-index">02</span><span data-i18n="labEyebrow">INCIDENT SIMULATOR / TRAINING MODE</span></p>
+            <h2 id="lab-title" data-i18n="labTitle">Suspicion is a<br /><span class="gradient-text">superpower.</span></h2>
+            <p data-i18n="labDescription">Inspect a fictional message. Look for pressure, unusual requests, or a channel you cannot verify. Choose a safe response and learn why it works.</p>
+            <div class="lab-safe"><span class="lab-safe-mark" aria-hidden="true"></span><span data-i18n="labSafe">Training environment · No messages sent · No personal data</span></div>
+          </div>
+          <div class="quiz-card reveal" id="quiz-card" aria-live="off" aria-atomic="false">
+            <p class="quiz-fallback">Scam Lab interaction needs JavaScript. The fictional lesson examples and safety protocol remain available on this page.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section section-shell guide-section" id="guide" aria-labelledby="guide-title">
+        <div class="section-heading reveal">
+          <div>          <p class="eyebrow"><span class="section-index">03</span><span data-i18n="guideEyebrow">A PRACTICAL SAFETY PROTOCOL</span></p>
+          <h2 id="guide-title" data-i18n="guideTitle">If it feels wrong,<br /><span class="muted-heading">take the safe route.</span></h2></div>
+          <p class="section-intro" data-i18n="guideIntro">A calm checklist can help students, families, and older adults respond without panic. You never need to share a password, OTP, PIN, or banking details to report a scam.</p>
+        </div>
+        <figure class="guide-photo reveal">
+          <img
+            src="/images/digital-workspace.jpg"
+            alt="Someone pointing at a laptop while discussing something with a second person"
+            data-i18n-alt="guideImageAlt"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption data-i18n="guideImageCaption">Pause together. Verify through a channel you already trust.</figcaption>
+        </figure>
+        <div class="safety-steps reveal">
+          <div class="safety-step"><span>01</span><h3 data-i18n="safetyStopTitle">Stop contact</h3><p data-i18n="safetyStopText">Do not click, reply, call back, install an app, or approve an unexpected payment request.</p></div>
+          <div class="safety-step"><span>02</span><h3 data-i18n="safetyVerifyTitle">Verify independently</h3><p data-i18n="safetyVerifyText">Use the official app or a number you already trust—not the link or number in the suspicious message.</p></div>
+          <div class="safety-step"><span>03</span><h3 data-i18n="safetySecureTitle">Secure and document</h3><p data-i18n="safetySecureText">Save relevant messages and transaction references. Change exposed credentials using the official service.</p></div>
+          <div class="safety-step"><span>04</span><h3 data-i18n="safetyReportTitle">Report promptly</h3><p data-i18n="safetyReportText">For financial cyber fraud in India, call 1930 promptly and notify your bank using its official contact.</p></div>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-card guide-primary reveal" id="report">
+            <div class="guide-icon" aria-hidden="true">↗</div>
+            <p class="eyebrow" data-i18n="portalLabel">GOVERNMENT PORTAL</p>
+            <h3 data-i18n="portalTitle">National Cyber Crime Reporting Portal</h3>
+            <p data-i18n="portalDescription">Report cybercrime online through the Ministry of Home Affairs portal. Use the official site and follow its instructions.</p>
+            <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer"><span data-i18n="portalLink">Visit cybercrime.gov.in</span><span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="guide-card guide-call reveal">
+            <div class="guide-icon" aria-hidden="true">⌕</div>
+            <p class="eyebrow" data-i18n="helplineLabel">FINANCIAL CYBER FRAUD</p>
+            <h3 data-i18n="helplineTitle">Call helpline 1930</h3>
+            <p data-i18n="helplineDescription">If you have lost money to cyber financial fraud, call 1930 promptly and contact your bank using its official number.</p>
+            <a href="tel:1930"><span data-i18n="helplineLink">Call 1930</span><span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="guide-card reveal">
+            <div class="guide-icon" aria-hidden="true">✓</div>
+            <p class="eyebrow" data-i18n="protectLabel">BEFORE YOU REPORT</p>
+            <h3 data-i18n="protectTitle">Keep yourself safer</h3>
+            <p data-i18n="protectDescription">Save relevant messages, transaction references, and dates. Never share your OTP, PIN, password, or full card details with anyone.</p>
+            <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer"><span data-i18n="protectLink">Use official resources</span><span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+        <aside class="report-evidence" aria-labelledby="report-evidence-title">
+          <h3 id="report-evidence-title" data-i18n="reportEvidenceTitle">Keep useful details for a report</h3>
+          <ul>
+            <li data-i18n="reportEvidenceOne">Transaction IDs, payment references, dates, and times.</li>
+            <li data-i18n="reportEvidenceTwo">Screenshots, messages, emails, and suspicious phone numbers.</li>
+            <li data-i18n="reportEvidenceThree">Relevant email headers when reporting an email.</li>
+          </ul>
+        </aside>
+        <p class="source-note" data-i18n="sourceNote">Official information can change. Check the Government of India portal for current reporting steps. CyberShield is an educational project, not an emergency service.</p>
+      </section>
+
+      <section class="community-section" id="community" aria-labelledby="community-title">
+        <div class="section-shell community-inner">
+          <div class="community-copy reveal">
+            <p class="eyebrow"><span class="section-index">04</span><span data-i18n="communityEyebrow">SMALL CONVERSATIONS. SAFER COMMUNITIES.</span></p>
+            <h2 id="community-title" data-i18n="communityTitle">Awareness grows<br />when we <span class="gradient-text">share it.</span></h2>
+            <p data-i18n="communityDescription">Bring one useful digital-safety tip into a classroom, family chat, or community gathering. Record only genuine activities and learning—never invent numbers to make an impact look bigger.</p>
+            <a class="button button-secondary" href="mailto:?subject=Digital%20safety%20tip"><span data-i18n="communityAction">Share a safety conversation</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="community-photo reveal">
+            <img
+              src="/images/community-learning.jpg"
+              alt="A small group learning together around laptops"
+              data-i18n-alt="communityImageAlt"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span data-i18n="communityImageCaption">A learning moment — illustrative photo, not a CyberShield event.</span><span aria-hidden="true">04 / 08</span></figcaption>
+          </figure>
+          <div class="impact-panel reveal">
+            <div class="impact-panel-top"><span class="impact-symbol" aria-hidden="true">✳</span><span class="eyebrow" data-i18n="impactEyebrow">A SIMPLE IMPACT LOG</span></div>
+            <h3 data-i18n="impactTitle">Make the learning count.</h3>
+            <ul>
+              <li><span>01</span><span data-i18n="impactOne">What safety topic did you discuss?</span></li>
+              <li><span>02</span><span data-i18n="impactTwo">What question or insight came up?</span></li>
+              <li><span>03</span><span data-i18n="impactThree">What will you do differently next time?</span></li>
+            </ul>
+            <p data-i18n="impactNote">This page does not save activity logs or collect personal details. Record real outcomes in your own project notes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-cta section-shell reveal" aria-labelledby="closing-title">
+        <div>
+          <p class="eyebrow" data-i18n="closingEyebrow">A SMALL PAUSE CAN CHANGE THE NEXT STEP</p>
+          <h2 id="closing-title" data-i18n="closingTitle">Make verification your first move.</h2>
+        </div>
+        <figure class="closing-art" aria-hidden="true">
+          <img src="/assets/cybershield/glass-phone-shield.jpg" alt="" loading="lazy" decoding="async" />
+        </figure>
+        <div class="closing-actions">
+          <a class="button button-primary" href="#lab"><span data-i18n="closingPrimary">Try Scam Lab</span><span aria-hidden="true">↗</span></a>
+          <a class="closing-link" href="#guide"><span data-i18n="closingSecondary">Review the safety guide</span><span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">◇</span><span>CYBER<span class="brand-light">SHIELD</span></span></a>
+      <p data-i18n="footerText">© CyberShield. Stop. Check. Protect. An educational awareness resource, not an emergency service.</p>
+      <nav class="footer-nav" aria-label="Footer navigation" data-i18n-aria="footerNavigationLabel">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#learn" data-i18n="navLearn">Threats</a>
+        <a href="#lab" data-i18n="navLab">Scam Lab</a>
+        <a href="#guide" data-i18n="navGuide">Safety guide</a>
+        <a href="#community" data-i18n="navCommunity">Community</a>
+        <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer" data-i18n="footerReporting">Report cybercrime ↗</a>
+      </nav>
+      <a href="#home" class="back-top"><span data-i18n="backTop">Back to top</span><span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>
