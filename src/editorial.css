@@ -747,7 +747,7 @@ h1, h2, h3 { font-family: var(--display); }
 .safety-step > span { display: block; margin-bottom: 25px; color: #368b78; font: 700 9px var(--display); letter-spacing: .12em; }
 .safety-step h3 { margin-bottom: 9px; color: #2c3733; font-size: 15px; font-weight: 500; }
 .safety-step p { margin: 0; color: #67726d; font-size: 10px; line-height: 1.75; }
-.guide-grid { display: grid; grid-template-columns: 1.14fr .93fr .93fr; border-block: 1px solid #e2e8e3; }
+.guide-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid #e2e8e3; }
 .guide-card { display: flex; min-height: 280px; flex-direction: column; align-items: flex-start; padding: 24px 25px; border-right: 1px solid #e2e8e3; background: transparent; transition: background .2s ease; }
 .guide-card:last-child { border-right: 0; }
 .guide-card:hover { background: #f4f8f5; }
@@ -757,8 +757,9 @@ h1, h2, h3 { font-family: var(--display); }
 .guide-card h3 { min-height: 43px; margin-bottom: 10px; color: #293430; font-size: 17px; font-weight: 500; line-height: 1.35; }
 .guide-card > p:not(.eyebrow) { margin-bottom: 18px; color: #68736f; font-size: 10px; line-height: 1.75; }
 .guide-card > a { display: inline-flex; min-height: 38px; align-items: center; gap: 10px; margin-top: auto; color: #267969; font-size: 9px; font-weight: 700; }
-.guide-card > a:hover { color: #174f48; }
-.source-note { max-width: 820px; margin: 18px 0 0; color: #7a8580; font-size: 9px; line-height: 1.75; }
+  .guide-card > a:hover { color: #174f48; }
+  .resource-disclaimer { margin-top: 12px; color: var(--quiet); font-size: 7px; line-height: 1.6; }
+  .source-note { max-width: 820px; margin: 18px 0 0; color: #7a8580; font-size: 9px; line-height: 1.75; }
 
 .community-section {
   margin-top: 17px;
@@ -914,7 +915,7 @@ h1, h2, h3 { font-family: var(--display); }
   .safety-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .safety-step:nth-child(2) { border-right: 0; }
   .safety-step:nth-child(n + 3) { border-top: 1px solid #e1e8e3; }
-  .guide-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .guide-card { padding: 18px 14px; }
   .community-inner { gap: 27px; }
 }
