@@ -1,0 +1,118 @@
+.phase1-container {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: #060a0c;
+  display: none;
+}
+.phase1-container.is-active {
+  display: block;
+}
+.phase1-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #060a0c;
+}
+.phase1-ui {
+  position: fixed;
+  inset: 0;
+  z-index: 65;
+  display: none;
+  font-family: "DM Sans", sans-serif;
+  color: #e9e9e6;
+}
+.phase1-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+.phase1-pause,
+.phase1-portrait {
+  position: relative;
+  z-index: 1;
+  display: none;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.phase1-pause {
+  display: grid;
+}
+.phase1-portrait-inner {
+  text-align: center;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.phase1-panel {
+  background: #121a1e;
+  border: 1px solid #2a454f;
+  border-radius: 12px;
+  padding: 28px 32px;
+  width: min(360px, 92%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+.phase1-title {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.phase1-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.phase1-row-graphics {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.phase1-label {
+  font-size: 13px;
+  color: #a0c4c8;
+  white-space: nowrap;
+}
+.phase1-select {
+  background: #0c1418;
+  border: 1px solid #2a454f;
+  color: #e9e9e6;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: inherit;
+  flex: 1;
+}
+.phase1-btn {
+  background: #1d3b44;
+  border: 1px solid #3a6f77;
+  color: #e9e9e6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+.phase1-btn:hover {
+  background: #2a4d57;
+}
+.phase1-btn-exit {
+  text-align: left;
+}
+.phase1-portrait-msg {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .phase1-ui {
+    font-size: 14px;
+  }
+  .phase1-panel {
+    padding: 20px 24px;
+  }
+}
