@@ -15,15 +15,16 @@ const reportDropdown = navigation.querySelector(".nav-dropdown");
 const morphSection = document.querySelector("#explore");
 const morphStage = document.querySelector("#morph-stage");
 const morphStatus = document.querySelector("#morph-status");
+const base = import.meta.env.BASE_URL;
 const lessonVisuals = [
-  "/assets/cybershield/network-security-circuit.jpg",
-  "/assets/cybershield/qr-payment-concept.jpg",
-  "/assets/cybershield/mobile-shield-interface.jpg",
-  "/images/digital-workspace.jpg",
-  "/assets/cybershield/secure-vault.jpg",
-  "/assets/cybershield/biometric-protection.jpg",
-  "/assets/cybershield/fiber-optic-threat-network.jpg",
-  "/assets/cybershield/synthetic-fingerprint.jpg",
+  `${base}assets/cybershield/network-security-circuit.jpg`,
+  `${base}assets/cybershield/qr-payment-concept.jpg`,
+  `${base}assets/cybershield/mobile-shield-interface.jpg`,
+  `${base}images/digital-workspace.jpg`,
+  `${base}assets/cybershield/secure-vault.jpg`,
+  `${base}assets/cybershield/biometric-protection.jpg`,
+  `${base}assets/cybershield/fiber-optic-threat-network.jpg`,
+  `${base}assets/cybershield/synthetic-fingerprint.jpg`,
 ];
 
 function getSavedLanguage() {
@@ -93,7 +94,7 @@ function renderTrendTopics(language) {
       (trend, index) => `
         <article class="trend-card reveal">
           <div class="trend-card-visual">
-            <img class="trend-card-image" src="${trend.image}" alt="${trend.alt}" loading="lazy" decoding="async" />
+            <img class="trend-card-image" src="${base}${trend.image.replace(/^\//, '')}" alt="${trend.alt}" loading="lazy" decoding="async" />
             <span class="trend-card-art" aria-hidden="true">${lessonArtwork[trend.icon]}</span>
             <span class="trend-card-number">${String(index + 1).padStart(2, "0")}</span>
           </div>
@@ -487,3 +488,22 @@ const loadShieldScene = () => {
 
 if ("requestIdleCallback" in window) window.requestIdleCallback(loadShieldScene, { timeout: 1200 });
 else window.setTimeout(loadShieldScene, 0);
+
+const phase1Launch = document.querySelector("#phase1-launch");
+if (phase1Launch) {
+  phase1Launch.addEventListener("click", async () => {
+    try {
+      const { mount, setPortraitGate } = await import("./game/main.js");
+      mount();
+      const mq = window.matchMedia("(orientation: portrait)");
+      const isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0 || window.innerWidth <= 768;
+      function onPortraitChange() {
+        setPortraitGate(isMobile && mq.matches);
+      }
+      mq.addEventListener("change", onPortraitChange);
+      onPortraitChange();
+    } catch (error) {
+      console.error("Failed to load the 3D prototype.", error);
+    }
+  });
+}
